@@ -17,11 +17,11 @@
 --WHERE (MOVIETITLE LIKE '%Knight%') OR MOVIEYEAR = 1980;
 
 --4. Напишете заявка, която извежда имената на продуцентите с нетни активи над 10 000 000 долара
-SELECT NAME
-FROM MOVIEEXEC
-WHERE NETWORTH > 10000000;
+--SELECT NAME
+--FROM MOVIEEXEC
+--WHERE NETWORTH > 10000000;
 
 --5. Напишете заявка, която извежда имената на актьорите, които са мъже или живеят на Prefect Rd.
-SELECT NAME
-FROM MOVIESTAR
-WHERE GENDER = 'M' OR ADDRESS = 'Prefect Rd.';
+--SELECT NAME
+--FROM MOVIESTAR
+--WHERE GENDER = 'M' OR ADDRESS = 'Prefect Rd.';
