@@ -1,27 +1,35 @@
 --USE movies;
 
---1. Íàïèøåòå çàÿâêà, êîÿòî èçâåæäà èìåíàòà íà àêòüîðèòå ìúæå, ó÷àñòâàëè âúâ
---ôèëìà The Usual Suspects.
+--1. ˜˜˜˜˜˜˜˜ ˜˜˜˜˜˜, ˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜˜˜˜˜ ˜˜˜˜, ˜˜˜˜˜˜˜˜˜ ˜˜˜
+--˜˜˜˜˜ The Usual Suspects.
 
 --SELECT NAME
 --FROM MOVIESTAR INNER JOIN STARSIN
 --ON MOVIESTAR.NAME=STARSIN.STARNAME
 --WHERE MOVIESTAR.GENDER = 'M' AND STARSIN.MOVIETITLE = 'The Usual Suspects';
 
---2. Íàïèøåòå çàÿâêà, êîÿòî èçâåæäà èìåíàòà íà àêòüîðèòå, ó÷àñòâàëè âúâ ôèëìè îò
---1995, ïðîäóöèðàíè îò ñòóäèî MGM.--SELECT STARNAME--FROM STARSIN INNER JOIN MOVIE--ON STARSIN.MOVIEYEAR = MOVIE.YEAR--WHERE STARSIN.MOVIEYEAR=1995 AND MOVIE.STUDIONAME='MGM';--3. Íàïèøåòå çàÿâêà, êîÿòî èçâåæäà èìåíàòà íà ïðîäóöåíòèòå, êîèòî ñà
---ïðîäóöèðàëè ôèëìè íà ñòóäèî MGM.
+--2. ˜˜˜˜˜˜˜˜ ˜˜˜˜˜˜, ˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜˜˜˜˜, ˜˜˜˜˜˜˜˜˜ ˜˜˜ ˜˜˜˜˜ ˜˜
+--1995, ˜˜˜˜˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜˜ MGM.
+
+--SELECT STARNAME
+--FROM STARSIN INNER JOIN MOVIE
+--ON STARSIN.MOVIEYEAR = MOVIE.YEAR
+--WHERE STARSIN.MOVIEYEAR=1995 AND MOVIE.STUDIONAME='MGM';
+
+--3. ˜˜˜˜˜˜˜˜ ˜˜˜˜˜˜, ˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜˜˜˜˜˜˜˜, ˜˜˜˜˜ ˜˜
+--˜˜˜˜˜˜˜˜˜˜˜ ˜˜˜˜˜ ˜˜ ˜˜˜˜˜˜ MGM.
 --SELECT DISTINCT MOVIEEXEC.NAME
 --FROM MOVIEEXEC INNER JOIN MOVIE
 --ON MOVIEEXEC.CERT#=MOVIE.PRODUCERC#
 --WHERE MOVIE.STUDIONAME = 'MGM';
 
---4. Íàïèøåòå çàÿâêà, êîÿòî èçâåæäà èìåíàòà íà ôèëìè ñ äúëæèíà, ïî-ãîëÿìà îò
---äúëæèíàòà íà ôèëìà Star Wars.--SELECT M2.TITLE
+--4. ˜˜˜˜˜˜˜˜ ˜˜˜˜˜˜, ˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜ ˜ ˜˜˜˜˜˜˜, ˜˜-˜˜˜˜˜˜ ˜˜
+--˜˜˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜ Star Wars.
+--SELECT M2.TITLE
 --FROM MOVIE AS M1, MOVIE AS M2
 --WHERE M1.TITLE = 'Star Wars' AND (M2.LENGTH>M1.LENGTH);
 
---5. Íàïèøåòå çàÿâêà, êîÿòî èçâåæäà èìåíàòà íà ïðîäóöåíòèòå ñ íåòíè àêòèâè ïîãîëåìè îò òåçè íà Stephen Spielberg.
+--5. ˜˜˜˜˜˜˜˜ ˜˜˜˜˜˜, ˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜˜˜˜˜˜˜˜ ˜ ˜˜˜˜˜ ˜˜˜˜˜˜ ˜˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜ ˜˜ Stephen Spielberg.
 SELECT M2.NAME
 FROM MOVIEEXEC AS M1, MOVIEEXEC AS M2
 WHERE M1.NAME = 'Stephen Spielberg' AND (M2.NETWORTH > M1.NETWORTH)
