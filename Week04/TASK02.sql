@@ -27,4 +27,8 @@ USE PC;
 --WHERE L1.hd=L2.hd AND L1.model!=L2.model;
 
 --4. Намерете всички модели персонални компютри, които нямат регистриран
---производител.SELECT *FROM pc LEFT JOIN productON pc.model=product.modelWHERE product.model IS NULL;
+--производител.
+SELECT *
+FROM pc LEFT JOIN product
+ON pc.model=product.model
+WHERE product.model IS NULL;

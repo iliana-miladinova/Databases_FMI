@@ -21,7 +21,13 @@
 
 --3. Напишете заявка, която извежда името на студиото и имената на
 --актьорите, участвали във филми, произведени от това студио, подредени
---по име на студио.--SELECT DISTINCT STUDIONAME, STARNAME--FROM MOVIE INNER JOIN STARSIN --ON TITLE = MOVIETITLE AND YEAR=MOVIEYEAR--ORDER BY STUDIONAME;--4. Напишете заявка, която извежда имената на актьорите, участвали във
+--по име на студио.
+--SELECT DISTINCT STUDIONAME, STARNAME
+--FROM MOVIE INNER JOIN STARSIN 
+--ON TITLE = MOVIETITLE AND YEAR=MOVIEYEAR
+--ORDER BY STUDIONAME;
+
+--4. Напишете заявка, която извежда имената на актьорите, участвали във
 --филми на продуценти с най-големи нетни активи.
 --SELECT STARNAME, NETWORTH, TITLE
 --FROM STARSIN INNER JOIN MOVIE

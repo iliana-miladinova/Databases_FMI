@@ -42,7 +42,8 @@
 --ORDER BY BATTLE;
 
 --6. Намерете името, водоизместимостта и годината на пускане на вода на
---всички кораби, които имат същото име като техния клас.--SELECT SHIPS.NAME, CLASSES.DISPLACEMENT, SHIPS.LAUNCHED
+--всички кораби, които имат същото име като техния клас.
+--SELECT SHIPS.NAME, CLASSES.DISPLACEMENT, SHIPS.LAUNCHED
 --FROM SHIPS INNER JOIN CLASSES
 --ON SHIPS.NAME = CLASSES.CLASS
 --WHERE SHIPS.NAME = SHIPS.CLASS;
