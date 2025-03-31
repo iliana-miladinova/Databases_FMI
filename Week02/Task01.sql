@@ -30,6 +30,36 @@
 --WHERE M1.TITLE = 'Star Wars' AND (M2.LENGTH>M1.LENGTH);
 
 --5. ˜˜˜˜˜˜˜˜ ˜˜˜˜˜˜, ˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜˜˜˜˜˜˜˜ ˜ ˜˜˜˜˜ ˜˜˜˜˜˜ ˜˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜ ˜˜ Stephen Spielberg.
-SELECT M2.NAME
-FROM MOVIEEXEC AS M1, MOVIEEXEC AS M2
-WHERE M1.NAME = 'Stephen Spielberg' AND (M2.NETWORTH > M1.NETWORTH)
+--SELECT M2.NAME
+--FROM MOVIEEXEC AS M1, MOVIEEXEC AS M2
+--WHERE M1.NAME = 'Stephen Spielberg' AND (M2.NETWORTH > M1.NETWORTH)
+select  NAME
+from MOVIEEXEC
+where NETWORTH > (select NETWORTH
+				from MOVIEEXEC
+				where name='Stephen Spielberg');
+
+select name
+from MOVIEEXEC inner join (select producerc#
+							from MOVIE inner join STARSIN
+								on title=MOVIETITLE and year=MOVIEYEAR
+								where STARNAME='Harrison Ford') as prod
+on MOVIEEXEC.CERT#=prod.PRODUCERC#;
+
+select name
+from MOVIEEXEC 
+where cert# in (select producerc#
+				from movie inner join STARSIN
+				on title=MOVIETITLE and year=MOVIEYEAR
+								where STARNAME='Harrison Ford');
+
+select name, (select top 1 LENGTH 
+from MOVIE
+where PRODUCERC#=cert#
+order by length asc) as maxlen
+from MOVIEEXEC
+order by name;
+
+select m1.NAME, m2.NAME
+from MOVIESTAR as m1, MOVIESTAR as m2
+where m1.ADDRESS=m2.ADDRESS and m1.name < m2.name
