@@ -42,8 +42,28 @@
 --GROUP BY speed;
 
 --7. Напишете заявка, която извежда производителите, които са произвели поне 3
---различни персонални компютъра (с различен код).--SELECT product.maker, COUNT(pc.code) AS Num_of_pc--FROM product INNER JOIN pc--ON product.model=pc.model--GROUP BY maker--HAVING COUNT(pc.code)>=3;--8. Напишете заявка, която извежда производителите с най-висока цена на
---персонален компютър.--SELECT TOP 1 product.maker, MAX(pc.price) AS price--FROM product INNER JOIN pc--ON product.model=pc.model--GROUP BY product.maker--ORDER BY MAX(pc.price) desc;--SELECT product.maker, price--FROM product INNER JOIN pc--ON product.model=pc.model--WHERE price = (SELECT MAX(pc.price)--				FROM pc);--9. Напишете заявка, която извежда средната цена на персоналните компютри за
+--различни персонални компютъра (с различен код).
+--SELECT product.maker, COUNT(pc.code) AS Num_of_pc
+--FROM product INNER JOIN pc
+--ON product.model=pc.model
+--GROUP BY maker
+--HAVING COUNT(pc.code)>=3;
+
+--8. Напишете заявка, която извежда производителите с най-висока цена на
+--персонален компютър.
+--SELECT TOP 1 product.maker, MAX(pc.price) AS price
+--FROM product INNER JOIN pc
+--ON product.model=pc.model
+--GROUP BY product.maker
+--ORDER BY MAX(pc.price) desc;
+
+--SELECT product.maker, price
+--FROM product INNER JOIN pc
+--ON product.model=pc.model
+--WHERE price = (SELECT MAX(pc.price)
+--				FROM pc);
+
+--9. Напишете заявка, която извежда средната цена на персоналните компютри за
 --всяка честота по-голяма от 800.
 --SELECT speed, AVG(price) AS AvgPrice
 --FROM PC 
