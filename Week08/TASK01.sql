@@ -6,5 +6,9 @@
 --VALUES ('Nicole Kidman', '1967-06-20');
 
 --2. Да се изтрият всички продуценти с нетни активи под 30 милиона.
-DELETE FROM MOVIEEXEC
-WHERE NETWORTH < 30000000;
+--DELETE FROM MOVIEEXEC
+--WHERE NETWORTH < 30000000;
+
+--3. Да се изтрие информацията за всички филмови звезди, за които не се знае адреса
+--DELETE FROM MOVIESTAR
+--WHERE ADDRESS IS NULL;
