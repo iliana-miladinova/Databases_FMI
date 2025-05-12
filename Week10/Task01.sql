@@ -59,7 +59,8 @@ USE Flights;
 --)
 
 --2) За отделните релации задайте подходящи:
---a) първичен ключ
+--a) първичен ключ
+
 --ALTER TABLE Airline ALTER COLUMN CODE CHAR(2) NOT NULL;
 --ALTER TABLE Airline ADD CONSTRAINT PK_Airline PRIMARY KEY (CODE);
 
@@ -83,7 +84,11 @@ USE Flights;
 
 --b) ограничения за референтна цялостност, напр.:
 --- код на авиокомпанията от релациите Flight и Booking трябва да съществува
---в релацията Airline;--ALTER TABLE Flight ADD CONSTRAINT FK_FLIGHT_AIRLINE FOREIGN KEY (AIRLINE_OP) REFERENCES Airline(CODE);--ALTER TABLE Booking ADD CONSTRAINT FK_BOOKING_AIRLINE FOREIGN KEY (AIRLINE_CODE) REFERENCES Airline(CODE);--код на летище на излитане и код на летище на кацане от релацията Flight
+--в релацията Airline;
+--ALTER TABLE Flight ADD CONSTRAINT FK_FLIGHT_AIRLINE FOREIGN KEY (AIRLINE_OP) REFERENCES Airline(CODE);
+--ALTER TABLE Booking ADD CONSTRAINT FK_BOOKING_AIRLINE FOREIGN KEY (AIRLINE_CODE) REFERENCES Airline(CODE);
+
+--код на летище на излитане и код на летище на кацане от релацията Flight
 --трябва да съществува в релацията Airport;
 --ALTER TABLE Flight ADD CONSTRAINT FK_FLIGHT_AIRPORTDEP FOREIGN KEY (DEP_AIRPORT) REFERENCES Airport(CODE);
 --ALTER TABLE Flight ADD CONSTRAINT FK_FLIGHT_AIRPORTARR FOREIGN KEY (ARR_AIRPORT) REFERENCES Airport(CODE);
